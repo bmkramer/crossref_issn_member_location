@@ -1,21 +1,31 @@
-# crossref_issn_member_location
-##Matching ISSN, member ID  and member location in Crossref
+## Matching ISSN, member ID  and member location in Crossref
 
-###Workflow described in this repo:
+### Workflow described in this repo:
 
-1a) Collect information on ISSNs (ISSN, journal title, publisher, doi counts) through the Crossref REST API via the journals route 
-Script: 01a_crossref_issn.R
+1a) Collect information on ISSNs (ISSN, journal title, publisher, doi counts) through the Crossref REST API via the journals route  
+Script: [01a_crossref_issn.R](01a_crossref_issn.R)
 
-1b) Collect information on members (member id, name, location) through the Crossref REST API via the members route
-Script: 01b_crossref_members_location.R
+1b) Collect information on members (member id, name, location) through the Crossref REST API via the members route  
+Script: [01b_crossref_members_location.R](01b_crossref_members_location.R)
 
-external step) From information on ISSN and member ID from all individual Crossref DOIs, identify all existing ISSN - memberID links. This is done using Crossref metadata Plus data through Google Big Query, using Curtin Open Knowledge Institute (COKI) infrastructure. 
-SQL query: sql/COKI_GBQ_crossref_issn_member.sql
+_external step_) From information on ISSN and member ID from all individual Crossref DOIs, identify all existing ISSN - memberID links.  
+This is done using Crossref metadata Plus data through Google Big Query, using Curtin Open Knowledge Institute (COKI) infrastructure.  
+SQL query: [sql/COKI_GBQ_crossref_issn_member.sql](sql/COKI_GBQ_crossref_issn_member.sql)
 
-2) Join member information (member name, member location) to ISSN-member links
-Script: 02_crossref_merge.R
+2 ) Join member information (member name, member location) to ISSN-member links  
+Script: [02_crossref_merge.R](02_crossref_merge.R)
 
-All data are in the folder data, with subfolders for each sample date.
+### Data
+All data are in the folder [data](data/), with subfolders for each sample date.
+
+**Information on ISSNs from Crosssref API**:  
+- crossref_issn_[date].csv  
+**Information on ISSNs from Crosssref API**:  
+- crossref_members_location_[date].csv  
+**Information on ISSNs from Crosssref API**:  
+- crossref_issn_member_metadataplus_[metadata plus date].csv  
+**Matched ISSN - member id - member location**:  
+- crossref_issn_member_location_[date].csv  
 
 ### Known issues / limitations
 
