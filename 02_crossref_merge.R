@@ -17,7 +17,7 @@ path <- file.path("data",date)
 date_metadata_plus <- "2021-12-07"
 
 #Read files
-cr_issn <- read_csv(paste0(path,"/crossref_issn_",date,".csv"))
+#cr_issn <- read_csv(paste0(path,"/crossref_issn_",date,".csv"))
 cr_members <- read_csv(paste0(path, "/crossref_members_location_",date,".csv"))
 cr_link <- read_csv(paste0(path, "/crossref_issn_member_metadata_plus_",date_metadata_plus,".csv"))
 
