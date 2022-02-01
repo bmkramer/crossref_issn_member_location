@@ -8,8 +8,7 @@ Script: [01a_crossref_issn.R](01a_crossref_issn.R)
 1b) Collect information on members (member id, name, location) through the Crossref REST API via the members route  
 Script: [01b_crossref_members_location.R](01b_crossref_members_location.R)
 
-_external step_) From information on ISSN and member ID from all individual Crossref DOIs, identify all existing ISSN - memberID links.  
-This is done using Crossref metadata Plus data through Google Big Query, using Curtin Open Knowledge Institute (COKI) infrastructure.  
+_external step_) From information on ISSN and member ID from all individual Crossref DOIs, identify all existing ISSN - memberID links. This is done using Crossref metadata Plus data through Google Big Query, using Curtin Open Knowledge Institute (COKI) infrastructure.  
 SQL query: [sql/COKI_GBQ_crossref_issn_member.sql](sql/COKI_GBQ_crossref_issn_member.sql)
 
 2 ) Join member information (member name, member location) to ISSN-member links  
