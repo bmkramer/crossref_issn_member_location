@@ -5,7 +5,7 @@
 1a) Collect information on ISSNs (ISSN, journal title, publisher, doi counts) through the Crossref REST API via the journals route  
 Script: [01a_crossref_issn.R](01a_crossref_issn.R)
 
-1b) Collect information on members (member id, name, location) through the Crossref REST API via the members route  
+1b) Collect information on members (member id, name, location) through the Crossref REST API via the members route. A column country is added by extracting that information from the member location.  
 Script: [01b_crossref_members_location.R](01b_crossref_members_location.R)
 
 _external step_) From information on ISSN and member ID from all individual Crossref DOIs, identify all existing ISSN - memberID links. This is done using Crossref metadata Plus data through Google Big Query, using Curtin Open Knowledge Institute (COKI) infrastructure.  
@@ -19,6 +19,7 @@ All data are in the folder [data](data/), with subfolders for each sample date.
 
 **Information on ISSNs from Crosssref API**:  
 - crossref_issn_[date].csv  
+- crossref_issn_unique_[date].csv  
 **Information on ISSNs from Crosssref API**:  
 - crossref_members_location_[date].csv  
 **Information on ISSNs from Crosssref API**:  
