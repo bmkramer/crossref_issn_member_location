@@ -19,11 +19,14 @@ All data are in the folder [data](data/), with subfolders for each sample date.
 
 **Information on ISSNs from Crosssref API**:  
 - crossref_issn_[date].csv
-- crossref_issn_unique_[date].csv 
+- crossref_issn_unique_[date].csv  
+
 **Information on ISSNs from Crosssref API**:  
 - crossref_members_location_[date].csv  
+
 **Information on members from Crosssref API**:  
 - crossref_issn_member_metadataplus_[metadata plus date].csv  
+
 **Matched ISSN - member id - member location**:  
 - crossref_issn_member_location_[date].csv  
 
