@@ -8,10 +8,10 @@ Script: [01a_crossref_issn.R](01a_crossref_issn.R)
 1b) Collect information on members (member id, name, location) through the Crossref REST API via the members route. A column country is added by extracting that information from the member location.  
 Script: [01b_crossref_members_location.R](01b_crossref_members_location.R)
 
-_external step_) From information on ISSN and member ID for all individual Crossref DOIs, identify all existing ISSN - memberID links. This is done using Crossref Metadata Plus data through Google Big Query, using Curtin Open Knowledge Institute (COKI) infrastructure.  
+_external step_) From information on ISSN and member ID for all individual Crossref DOIs, identify all existing ISSN - memberID links. This is done using Crossref Metadata Plus data through Google Big Query, using [Curtin Open Knowledge Institute (COKI)](@Curtin-Open-Knowledge-Initiative) infrastructure.  
 SQL query: [sql/COKI_GBQ_crossref_issn_member.sql](sql/COKI_GBQ_crossref_issn_member.sql)
 
-2 ) Join member information (member name, member location) to ISSN-member links  
+2 ) Join member information (member name, member county) to ISSN <-> member links  
 Script: [02_crossref_merge.R](02_crossref_merge.R)
 
 ### Data
