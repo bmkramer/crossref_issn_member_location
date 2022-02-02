@@ -86,7 +86,8 @@ res <- map(c, getCrossref_low_progress) %>%
   flatten()
 
 #extract data
-data <- extractData(res)
+data <- extractData(res) %>%
+  distinct()
 
 filename <- paste0("crossref_issn_",date,".csv")
 filepath <- file.path(path, filename)
