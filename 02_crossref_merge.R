@@ -23,7 +23,9 @@ cr_link <- read_csv(paste0(path, "/crossref_issn_member_metadata_plus_",date_met
 
 #join issn and member data to issn_member links
 cr_joined <- cr_link %>%
-  left_join(cr_members, by = c("member" = "member_id"))
+  left_join(cr_members, by = c("member" = "member_id")) %>%
+  #remove member location, only keep member country
+  select(-member_location)
 
 filename <- paste0("crossref_issn_member_location_",date,".csv")
 filepath <- file.path(path, filename)
