@@ -23,7 +23,8 @@ cr_issn <- read_csv(paste0(path,"/crossref_issn_",date,".csv"))
 cr_members <- read_csv(paste0(path, "/crossref_members_location_",date,".csv"))
 cr_link <- read_csv(paste0(path, "/crossref_issn_member_metadata_plus_",date_metadata_plus,".csv"))
 
-#keep current issn-member pairs (based on latest created_date from Crossref records)
+
+#keep most recent issn-member pairs (based on latest created_date from Crossref records)
 cr_link_current <- cr_link %>%
   group_by(issn) %>%
   arrange(desc(created_date)) %>%
@@ -32,7 +33,7 @@ cr_link_current <- cr_link %>%
   select(-created_date)
 
 #join issn and member data to issn_member links
-cr_joined <- cr_link %>%
+cr_joined <- cr_link_current %>%
   left_join(cr_members, by = c("member" = "member_id")) %>%
   #remove member location, only keep member country
   select(-member_location)
