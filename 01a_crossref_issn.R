@@ -64,7 +64,7 @@ extractData <- function(x){
 
 #set date
 date <- Sys.Date()
-date <- "2022-02-01"
+#date <- "2023-01-11"
 #create output directory
 path <- file.path("data",date) 
 dir.create(path)
@@ -73,7 +73,7 @@ dir.create(path)
 #get number of journals
 res <- cr_journals(limit=0)
 total <- res$meta$total_results
-#n=99778
+#n=110694
 
 #set vector of offset values
 c <- seq(0, total, by=1000)
