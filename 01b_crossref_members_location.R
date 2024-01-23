@@ -31,8 +31,8 @@ getCrossref_high_progress <- function(offset){
 #------------------------------------------------------------------------------
 
 #set date to date of sampling
-#date <- Sys.Date()
-date <- "2022-02-01"
+date <- Sys.Date()
+#date <- "2022-02-01"
 #set output directory
 path <- file.path("data",date) 
 
