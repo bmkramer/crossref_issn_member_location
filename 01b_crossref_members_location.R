@@ -40,7 +40,7 @@ path <- file.path("data",date)
 #get number of members
 res <- cr_members(limit=0)
 total <- res$meta$total_results
-#n=21089
+#n=28045
 
 
 #set vector of offset values
@@ -62,4 +62,5 @@ data <- res %>%
 filename <- paste0("crossref_members_location_",date,".csv")
 filepath <- file.path(path, filename)
 write_csv(data, filepath)
+
 
